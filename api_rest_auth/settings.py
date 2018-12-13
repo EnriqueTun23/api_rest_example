@@ -41,11 +41,14 @@ INSTALLED_APPS = [
     # 'rest_auth',
     'rest_framework',
     'todos.apps.TodosConfig',
-    'api.apps.ApiConfig'
+    'api.apps.ApiConfig',
+
+    'corsheaders'
 ]
 
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -56,6 +59,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'api_rest_auth.urls'
+
+CORS_ORIGIN_ALLOW_ALL = True 
 
 TEMPLATES = [
     {
